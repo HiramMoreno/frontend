@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrese</title>
+    <link rel="stylesheet" type="text/css" href="index.css">
+
+</head>
+
+<body class="text-center">
+
+    <form class="form-signin" id="registroForm" action="/register" method="post" onsubmit="return validarFormulario()">
+        <h1 class="h3 mb-3 font-weight-normal">Unase a nuestra comunidad:</h1>
+        <input type="text" id="Usuario" name="Usuario" class="form-control" placeholder="Usuario" required autofocus>
+        <input type="password" id="Contraseña" name="Contraseña" class="form-control" placeholder="Contraseña" required>
+        <input type="email" id="Correo" name="Correo" class="form-control" placeholder="Email" required>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Registrese</button>
+    </form>
+
+    <script>
+        function validarFormulario() {
+            var usuario = document.getElementById("Usuario").value;
+            var correo = document.getElementById("Correo").value;
+
+            var regexUsuario = /^[a-zA-Z_]+$/;
+            if (!regexUsuario.test(usuario)) {
+                alert("El usuario solo debe contener letras.");
+                return false;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+            }
+
+            var regexCorreo = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!regexCorreo.test(correo)) {
+                alert("Por favor ingresa un correo electrónico válido.");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</body>
+
+</html>
